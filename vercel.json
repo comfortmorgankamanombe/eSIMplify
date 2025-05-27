@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://rjgotbruhdursgcvnvaw.supabase.co/rest/v1/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "apikey",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqZ290YnJ1aGR1cnNnY3ZudmF3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDYxMDY0ODIsImV4cCI6MjA2MTY4MjQ4Mn0.n6qLoWlDESyF51hRreY983ZTTjIVuqIzZOXaP7rWVAg"
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqZ290YnJ1aGR1cnNnY3ZudmF3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDYxMDY0ODIsImV4cCI6MjA2MTY4MjQ4Mn0.n6qLoWlDESyF51hRreY983ZTTjIVuqIzZOXaP7rWVAg"
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    }
+  ],
+  "env": {
+    "SUPABASE_URL": "https://rjgotbruhdursgcvnvaw.supabase.co",
+    "SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqZ290YnJ1aGR1cnNnY3ZudmF3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDYxMDY0ODIsImV4cCI6MjA2MTY4MjQ4Mn0.n6qLoWlDESyF51hRreY983ZTTjIVuqIzZOXaP7rWVAg"
+  }
+}
